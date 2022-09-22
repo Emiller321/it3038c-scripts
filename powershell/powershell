@@ -1,1 +1,2 @@
+Send-MailMessage -To "leonardf@mail.uc.edu" -From "eldmilleree@gmail.com" -Subject "IT3038c Windows SysInfo" -Body "This machine's IP is 192.168.33.64. User is Administrator. Hostname is mille4ei-win. Powershell Version 5. Todays Date is Wednesday, 09 21 2022" -SmtpServer smtp.gmail.com -por 587 -UseSSl -Credential (Get-Credential)
 
