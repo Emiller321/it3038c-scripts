@@ -1,0 +1,5 @@
+﻿vim .gitignore
+#### If using Powershell you can edit this file with notepad. Feel free to set another alias 'set-alias vim notepad'
+notepad .gitignore
+
+output.log
