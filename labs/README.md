@@ -1,42 +1,45 @@
-# LAB 7 EXAMPLE
+# LAB 7 Pillow Plugin with Python
 Here is how you can run a Python script that I created, which uses a plugin called Pillow. 
 
-First, let's create a Virtual ENV called scripts. You can call it whatever you want.
+First, open up vscode application in which you can download here: https://code.visualstudio.com/download
 
-```bash
-virtualenv ~/venv/pillow
-source ~/venv/scripts/bin/activate
-pip install pillow
-```
-Now, find an image you want to use. It can be anything, really. In fact, if we're smart, we can do it all from the command line. 
+Once you open up vscode, you wan to make sure you have Pillow plugin installed on your system. Go to your terminal and input this below:
 
-Download an image from the internet and save it to your hard drive. 
-
-Now, in Python, run the following code:
-
-```python
-from PIL import Image,ImageFilter
-myImage = Image.open('/full/path/to/image.jpg')
-myImage.load
+```pip install Pillow
 ```
 
-The syntax above will load the image. Now we can run several commands against it to get format and size, and even show the image.
+Once you do this open up vscode and find an image you want to use and input this code to import the Image (Make sure to have your image in the same folder with your code):
 
-```python
-myImage.format
-myImage.size
-myImage.show()
+```from PIL import Image, ImageEnhance
+
+# Create new image by import
+image = Image.open("Here input the name of the image you want to use")
+```
+For example my image that was used was 'waterfall.jfif'
+
+Now, if you want to apply a color enhancer to the code input this:
+
+```#Creating an Enhancer
+color_enhancer = ImageEnhance.Color(image)
+
+#Applying the Enhancer
+enhanced_image = color_enhancer.enhance(5)
+
+enhanced_image.show()
+```
+If you want to apply sharpness input this below:
+
+```sharpness_enhancer = ImageEnhance.Sharpness(image)
+
+enhanced_image = sharpness_enhancer.enhance(7)
+enhanced_image.show()
 ```
 
-Finally, we can use the ImageFilter module to apply a filter to it and show it, like so...
+Finally, if you want to transpose the image input this code:
 
-```python
-blur = myImage.filter(ImageFilter(BLUR)).show()
-quit()
+```#Transpose the Image
+image_flip = image.transpose(Image.Transpose.TRANSPOSE)
+
+image_flip.show()
 ```
-
-I hope that was fun. Don't forget to deactivate your virtualenv when you're done.
-
-```bash
-deactivate
-```
+There is many more features to do with this code. However these were my three different usages of the plgin for Lab 7
